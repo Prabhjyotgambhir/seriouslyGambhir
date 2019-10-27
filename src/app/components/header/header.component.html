@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <button mat-button>Prabhjyot Gambhir</button>
+    <div class="navigation-controls">
+        <button mat-button>Home</button>
+        <button mat-button>Email me</button>
+        <button mat-button [matMenuTriggerFor]="menu">Social Connect</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Facebook</button>
+            <button mat-menu-item>Linkedin</button>
+        </mat-menu>
+    </div>
+</mat-toolbar>
