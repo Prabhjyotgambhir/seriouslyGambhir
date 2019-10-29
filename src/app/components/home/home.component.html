@@ -1,1 +1,3 @@
-<app-story *ngFor="let story of stories" [story]="story"></app-story>
+<div class="story-container">
+    <app-story *ngFor="let story of stories" [story]="story" (click)="openStoryDetails(story)"></app-story>
+</div>

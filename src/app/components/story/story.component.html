@@ -1,8 +1,11 @@
-<mat-card class="example-card">
+<mat-card *ngIf="story">
   <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
   <mat-card-content>
     <h2>{{story.title}}</h2>
-    <p>
+    <mat-chip-list aria-label="Fish selection">
+      <mat-chip *ngFor="let tag of story.tags">{{tag}}</mat-chip>
+    </mat-chip-list>
+    <p class="story-content">
       {{story.content}}
     </p>
   </mat-card-content>

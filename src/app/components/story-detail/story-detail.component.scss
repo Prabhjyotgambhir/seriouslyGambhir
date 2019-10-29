@@ -1,13 +1,31 @@
 .story-detail-container {
     width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .story-details {
     width: 60%;
-    background: red;
 }
 
 .misc {
     width: 40%;
-    background: black;
+    padding: 5%;
+}
+
+::ng-deep .story-details mat-card {
+    max-height: 100% !important;
+    width: 100% !important;
+    margin: 5% 0 !important;
+    position: unset !important;
+    box-shadow: unset !important;
+    padding: 0 !important;
+    img {
+        margin: 0 !important;
+        width: 100% !important;
+    }
+    
+    mat-card-content {
+        padding: 5%;
+    }
 }

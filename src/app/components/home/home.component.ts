@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Story } from 'src/app/models/story';
 import { StoryService } from 'src/app/services/story.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { StoryService } from 'src/app/services/story.service';
 export class HomeComponent implements OnInit {
 
   stories: Story[];
-  constructor(private storyService: StoryService) {
+  constructor(private storyService: StoryService, private router: Router) {
     this.getStory();
   }
 
@@ -22,6 +23,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  openStoryDetails(story: Story) {
+    this.router.navigateByUrl(`story/${story._id}`);
   }
 
 }

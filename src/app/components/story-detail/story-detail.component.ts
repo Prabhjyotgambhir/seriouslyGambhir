@@ -23,7 +23,6 @@ export class StoryDetailComponent implements OnInit {
   getStoryDetailById() {
     this.storyService.getStoryById(this.storyId).subscribe((response) => {
       this.story = response;
-      console.log(this.story + 'story details');
     });
   }
 
