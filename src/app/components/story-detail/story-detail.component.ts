@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StoryService } from 'src/app/services/story.service';
+import { StoryService } from 'src/app/service/story.service';
 import { Story } from 'src/app/models/story';
 
 @Component({
@@ -15,7 +15,7 @@ export class StoryDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      this.storyId = params['id'];
+      this.storyId = params.id;
       this.getStoryDetailById();
     });
   }

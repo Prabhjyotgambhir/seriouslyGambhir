@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Story } from 'src/app/models/story';
-import { StoryService } from 'src/app/services/story.service';
+import { StoryService } from 'src/app/service/story.service';
 import { Router } from '@angular/router';
+import { Story } from 'src/app/models/story';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   getStory() {
-    this.storyService.getStory().subscribe((response) => {
+    this.storyService.getStoryList().subscribe((response) => {
       this.stories = response;
     });
   }

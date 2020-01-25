@@ -4,10 +4,11 @@ const port = 2000;
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const config = require('./config/database');
 const cors = require('cors');
+require('dotenv').config()
+const configUrl = `mongodb+srv://prabhjyotgambhir:${process.env.MONGODB_PASSWORD}@seriouslygambhirserver-gkzob.mongodb.net/test?retryWrites=true&w=majority`;
 
-// Route
+// Route    
 const StoryRoute = require('./routes/story');
 
 // Middlewares
@@ -16,14 +17,14 @@ app.use(cors());
 app.use(morgan('dev'));
 
 
-mongoose.connect(config.url, {
+mongoose.connect(configUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 },  (error) => {
     if (error) {
         console.log(error);
     } else {
-        console.log('Connected to database: ', config.url);
+        console.log('Connected to database: ', configUrl);
     }
 });
 
